@@ -1,1 +1,16 @@
 # learning kubernetes
+1. Install minikube on linux - for reference check kubernetes portal for installation
+2. If you get error when starting minikube, do following - clean miniukube and docker 
+	minikube delete --all --purge
+	docker system prune --all
+   then again "minikube start"
+   
+  
+3.  minikube start || delete
+	minicube status
+	minicube dashboard
+
+4.  kubectl create deployment my-app --image=link
+	kubectl get deployments
+	kubectl get pods
+	kubectl delete deployment my-app
