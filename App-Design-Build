@@ -1,0 +1,86 @@
+######  docker command #########
+FROM node:latest
+LABEL maintainer=
+WORKDIR /src
+COPY . .
+RUN npm install
+EXPOSE 8080 
+ENV
+CMD
+ENTRYPOINT ["node", "./app.js"]
+#--------------------------------------------------------------------------------------
+
+#change the namespace
+	kubectl config set-context --current --namespace=<namespace-name>
+
+
+#build
+	docker build -t amolmagdum25/test -f ./path/Containerfile1 ./App
+	
+#Save
+	docker save ckad:pluralsight | gzip > ckad-image.zip
+	podman save --format oci-archive ckad:pluralsight | gzip > ckad-iamge.zip
+	
+	
+# rename
+	docker image tag ckad:pluralsight amolmagdum25/ckad:prod
+	
+#remove image
+	docker image rm ckad:pluralsight
+	
+#tag image pushed to repo
+	docker image build -t internal-reg.io/dev-fe/ckad:ps2 -f ./Bulderfiles/Dockerfile ./App
+	
+#Download a local copy of the official `alpine` image with the `3.15.4` tag.
+	docker image pull alpine:3.15.4
+
+#Create a tarball from the local `ckad:ps2` image.
+	docker save internal-reg.io/dev-fe/ckad:ps2 --output ckad-ps2.tar
+	
+#delete 
+	docker image rm alpine:3.15.4
+	
+#build docker image by pulling from 
+	docker image build -t internal-reg.io/ckad-dev/ckad:ps3 -f ./Buildfiles/buildfile.ckad ./dev/ckad	
+
+#
+	completions: totoal successful containers
+  	parallelism: starting of containers at time
+  	backoffLimit: each pod failure is counted towards the .spec.backoffLimit
+  	activeDeadlineSeconds: applies to the duration of the job, all of its running Pods are terminated
+
+    cronjobs
+	startingDeadlineSeconds: defines a deadline for starting the Job
+	concurrencyPolicy: Forbid, Allow, Replace
+	successfulJobsHistoryLimit: specifies the number of successful finished jobs to keep
+	failedJobsHistoryLimit: specifies the number of failed finished jobs to keep
+
+
+	
+#Jobs and cron Jobs
+Kind: Job
+spec:
+
+Kind: CronJob
+	spec: contain schedulr in cron * * * * *  (0/2 * * * *) = after each 2 min
+		
+#----- initContainer and sidecar -----------
+in Spec: initContainers is executed before main container to verify few checks or set env values.
+sidecar: declared like main container and run sideby,  ut take few thing from main container to execute 
+	
+	
+#------- Volumes -----------
+persistant volume claim
+storage class
+Ephemeral	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
